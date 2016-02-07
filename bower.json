@@ -1,0 +1,17 @@
+{
+  "name": "auto-reco",
+  "description": "auto-reco =========",
+  "authors": [
+    "ino-h"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "normalize.styl": "^3.0.3"
+  }
+}

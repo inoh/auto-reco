@@ -7,7 +7,10 @@ runSequence = require('run-sequence')
 webserver = require('gulp-webserver')
 
 gulp.task 'stylus',  =>
-  gulp.src 'src/stylus/*.styl'
+  gulp.src [
+      'bower_components/normalize.styl/normalize.styl',
+      'src/stylus/*.styl'
+    ]
     .pipe stylus()
     .pipe concat 'app.css'
     .pipe gulp.dest 'dist/css/'
