@@ -1,10 +1,11 @@
 gulp = require('gulp')
 stylus = require('gulp-stylus')
-coffee = require('gulp-coffee')
 slim = require('gulp-slim')
 concat = require('gulp-concat')
 runSequence = require('run-sequence')
 webserver = require('gulp-webserver')
+browserify = require('browserify')
+source = require('vinyl-source-stream')
 
 gulp.task 'stylus',  =>
   gulp.src [
@@ -16,10 +17,13 @@ gulp.task 'stylus',  =>
     .pipe gulp.dest 'dist/css/'
 
 gulp.task 'coffee', =>
-  gulp.src 'src/coffee/*.coffee'
-    .pipe coffee()
-    .pipe concat('app.js')
-    .pipe gulp.dest 'dist/js/'
+  browserify
+      entries: 'src/coffee/app.coffee'
+      extensions: ['.coffee']
+    .transform 'coffeeify'
+    .bundle()
+    .pipe source('app.js')
+    .pipe gulp.dest 'dist/js'
 
 gulp.task 'slim', =>
   gulp.src 'src/slim/*.slim'
