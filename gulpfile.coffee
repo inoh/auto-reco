@@ -30,6 +30,20 @@ gulp.task 'slim', =>
     .pipe slim pretty: true
     .pipe gulp.dest 'dist/'
 
+gulp.task 'static', =>
+  gulp.src ['./src/static/template.xlsm']
+    .pipe gulp.dest('dist/public')
+  gulp.src [
+      'bower_components/jquery/dist/jquery.min.js',
+      'bower_components/jquery/dist/jquery.min.map',
+      'bower_components/js-xlsx/jszip.js',
+      'bower_components/js-xlsx/shim.js',
+      'bower_components/js-xlsx/xlsx.js',
+      'bower_components/underscore/underscore-min.js',
+      'bower_components/underscore/underscore-min.map'
+    ]
+    .pipe gulp.dest('dist/js')
+
 gulp.task 'watch', =>
   gulp.watch 'src/stylus/*.styl', ['stylus']
   gulp.watch 'src/coffee/*.coffee', ['coffee']
@@ -42,7 +56,7 @@ gulp.task 'webserver', =>
       livereload: true
 
 gulp.task 'build', (callback) => runSequence(
-  ['stylus', 'coffee', 'slim'],
+  ['static', 'stylus', 'coffee', 'slim'],
   callback
 )
 

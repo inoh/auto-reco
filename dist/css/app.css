@@ -336,3 +336,6 @@ th {
   padding: 0;
 }
 
+p {
+  border: 1px solid #ccc;
+}

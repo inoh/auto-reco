@@ -13,6 +13,8 @@
   ],
   "devDependencies": {
     "normalize.styl": "^3.0.3",
-    "js-xlsx": "^0.8.0"
+    "js-xlsx": "^0.8.0",
+    "jquery": "^2.2.0",
+    "underscore": "^1.8.3"
   }
 }
