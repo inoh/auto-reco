@@ -1,4 +1,5 @@
 $ = jQuery = require 'jquery'
+_ = require 'underscore'
 
 $ ->
   xhr = new XMLHttpRequest()

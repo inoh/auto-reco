@@ -34,13 +34,9 @@ gulp.task 'static', =>
   gulp.src ['./src/static/template.xlsm']
     .pipe gulp.dest('dist/public')
   gulp.src [
-      'bower_components/jquery/dist/jquery.min.js',
-      'bower_components/jquery/dist/jquery.min.map',
       'bower_components/js-xlsx/jszip.js',
       'bower_components/js-xlsx/shim.js',
-      'bower_components/js-xlsx/xlsx.js',
-      'bower_components/underscore/underscore-min.js',
-      'bower_components/underscore/underscore-min.map'
+      'bower_components/js-xlsx/xlsx.js'
     ]
     .pipe gulp.dest('dist/js')
 

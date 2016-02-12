@@ -18,7 +18,8 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "browser": {
-    "jquery": "./bower_components/jquery/dist/jquery.js"
+    "jquery": "./bower_components/jquery/dist/jquery.js",
+    "underscore": "./bower_components/underscore/underscore.js"
   },
   "browserify-shim": {
     "jquery": "$"
