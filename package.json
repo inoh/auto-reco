@@ -19,10 +19,12 @@
   },
   "browser": {
     "jquery": "./bower_components/jquery/dist/jquery.js",
-    "underscore": "./bower_components/underscore/underscore.js"
+    "underscore": "./bower_components/underscore/underscore.js",
+    "file-saver": "./bower_components/file-saver/FileSaver.js"
   },
   "browserify-shim": {
-    "jquery": "$"
+    "jquery": "$",
+    "file-saver": "saveAs"
   },
   "browserify": {
     "transform": [ "browserify-shim" ]
